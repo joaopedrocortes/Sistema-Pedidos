@@ -1,6 +1,6 @@
 package Sistema_Pedidos;
 
-public class Cliente {
+public abstract class Cliente {
     private String nome;
     private String email;
 

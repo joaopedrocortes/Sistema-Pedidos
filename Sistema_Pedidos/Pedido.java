@@ -9,6 +9,7 @@ public class Pedido {
     private ItemPedido[] itens;
     private int indice = 0;
     private Cliente cliente;
+    private IPagamento metodoPagamento;
 
     public Pedido(int numero, String status, LocalDate data, Cliente cliente) {
         this.numero = numero;
@@ -54,6 +55,14 @@ public class Pedido {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public IPagamento getPagamento() {
+        return this.metodoPagamento;
+    }
+
+    public void setPagamento(IPagamento metodoPagamento) {
+        this.metodoPagamento = metodoPagamento;
     }
 
 
