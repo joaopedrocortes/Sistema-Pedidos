@@ -3,6 +3,7 @@ package Sistema_Pedidos;
 public class ItemPedido {
     private int quantidade;
     private Produto produto;
+    private double precoUnitario;
 
     public ItemPedido(Produto produto, int quantidade) {
         this.produto = produto;
@@ -26,6 +27,10 @@ public class ItemPedido {
     }
 
     public double getSubTotal() {
-        return produto.getPreco()*quantidade;
+        return this.precoUnitario * this.quantidade;
+    }
+
+    public void adicionarQuantidade(int quantidade){
+        this.quantidade += quantidade; 
     }
 }

@@ -1,9 +1,11 @@
 package Sistema_Pedidos;
 
 public class Produto {
-    private String nome;
-    private double preco;
-    private int estoque;
+    protected String nome;
+    protected double preco;
+    protected int estoque;
+    protected String id;
+    protected String descricao;
 
     public Produto(String nome, double preco){
         this.nome = nome;
@@ -14,6 +16,8 @@ public class Produto {
         System.out.println("Produto: " + this.nome);
         System.out.printf("Preço: R$ %.2f\n", this.preco);
         System.out.println("Estoque: " + this.estoque);
+        System.out.println("ID: " + this.id);
+        System.out.println("Descrição: " + this.descricao);
     }
 
     public String getNome(){
@@ -44,5 +48,21 @@ public class Produto {
         if (quantidade>0) {
             this.estoque += quantidade;
         }
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

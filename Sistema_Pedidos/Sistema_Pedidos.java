@@ -7,31 +7,23 @@ public class Sistema_Pedidos {
 
         Produto teclado = new Produto("Fortrek Teclado Gamer", 79.10);
         teclado.setEstoque(15);
-        
-
-        Produto mousepad = new Produto("Mouse Pad Preto", 8.90);
-        mousepad.setEstoque(30);
-        
-
-        Produto mouse = new Produto("Mouse Dell sem fio", 69.00);
-        mouse.setEstoque(30);
 
         Produto geleiaReal = new Produto("Geleia Real - In Natura", 499.99);
         geleiaReal.setEstoque(50);
         
     
-        ClientePF clientePF = new ClientePF("João Pedro", "joaopedro@cliente.com","095.438.721-66");
+        ClientePF clientePF = new ClientePF("João Pedro", "joaopedro@cliente.com","","","095.438.721-66");
+
 
         IPagamento pagamentoCartaoCredito = new PagamentoCartaoCredito(); 
 
-        Pedido pedido1 = new Pedido(721387261, "Em andamento", LocalDate.of(2025, 10, 4), clientePF);
+
+        Pedido pedido1 = new Pedido(LocalDate.of(2025, 10, 4), clientePF);
         pedido1.adicionarItem(teclado, 1);
-        pedido1.adicionarItem(mousepad, 2);
-        pedido1.adicionarItem(mouse, 2);
 
         
         
-        Pedido pedido2 = new Pedido(12467901, "Em andamento", LocalDate.of(2025, 11, 30), clientePF);
+        Pedido pedido2 = new Pedido(LocalDate.of(2025, 11, 30), clientePF);
         pedido2.adicionarItem(geleiaReal, 1);
 
 
@@ -47,28 +39,20 @@ public class Sistema_Pedidos {
         Produto console = new Produto("PlayStation 5", 3569.99);
         console.setEstoque(400);
 
-
-        Produto pcgamer = new Produto("PC Gamer RYZEN", 2479.99);
-        pcgamer.setEstoque(500);
-
-
-        Produto monitor = new Produto("Monitor Gamer AOC", 599.99);
-        monitor.setEstoque(500);
-
         Produto smarthphone = new Produto("Smarthphone Samsung Galaxy A36", 1499.99);
         smarthphone.setEstoque(500);
 
 
-        ClientePJ clientePJ = new ClientePJ("Loja Rico Games", "ricogames@cliente.com"," 00.623.904/0001-73");
+        ClientePJ clientePJ = new ClientePJ("Loja Rico Games", "ricogames@cliente.com","",""," 00.623.904/0001-73");
+
 
         IPagamento pagamentoBoleto = new PagamentoBoleto();
 
-        Pedido pedido3 = new Pedido(4312981, "Em andamento", LocalDate.of(2025, 12, 25), clientePJ);
-        pedido3.adicionarItem(console,10);
-        pedido3.adicionarItem(pcgamer, 20);
-        pedido3.adicionarItem(monitor, 20);
 
-        Pedido pedido4 = new Pedido(421938710,"Em andamento", LocalDate.of(2025, 11, 26), clientePJ);
+        Pedido pedido3 = new Pedido(LocalDate.of(2025, 12, 25), clientePJ);
+        pedido3.adicionarItem(console,10);
+
+        Pedido pedido4 = new Pedido(LocalDate.of(2025, 11, 26), clientePJ);
         pedido4.adicionarItem(smarthphone,1);
 
 
@@ -86,14 +70,6 @@ public class Sistema_Pedidos {
 
         System.out.println("---------- Produto 1 ----------");
         teclado.exibirDetalhes();
-
-
-        System.out.println("---------- Produto 2 ----------");
-        mousepad.exibirDetalhes();
-
-
-        System.out.println("---------- Produto 3 ----------");
-        mouse.exibirDetalhes();
 
 
         System.out.println("---------- Dados do Pedido ----------");
@@ -118,14 +94,6 @@ public class Sistema_Pedidos {
         
         System.out.println("---------- Produto 1 ----------");
         console.exibirDetalhes();
-
-
-        System.out.println("---------- Produto 2 ----------");
-        pcgamer.exibirDetalhes();
-
-
-        System.out.println("---------- Produto 3 ----------");
-        monitor.exibirDetalhes();
 
 
         System.out.println("---------- Dados do Pedido ----------");
