@@ -19,7 +19,8 @@ public class Pedido {
 
     void exibirDetalhes() {
         System.out.println("Data de entrega: " + this.data);
-        
+        System.out.println("Status do pedido: " + this.statusPedido);
+        System.out.println("Método de pagamento: " + this.metodoPagamento);
     }
 
     public LocalDate getData() {
@@ -76,7 +77,7 @@ public class Pedido {
 
     public double aplicarDesconto(double desconto) {
         double total = calcularTotal();
-        return total - desconto;
+        return total * desconto;
 
     }
 
