@@ -24,18 +24,18 @@ public class Sistema_Pedidos {
 
 
         Pedido pedido1 = new Pedido(LocalDate.of(2025, 10, 4), clientePF);
+        
         pedido1.adicionarItem(smarthphone, 1);
-
-        
-        
-        Pedido pedido2 = new Pedido(LocalDate.of(2025, 11, 30), clientePF);
-        pedido2.adicionarItem(geleiaReal, 1);
-
-
+        pedido1.calcularTotal();
         pedido1.setPagamento(pagamentoCartaoCredito);
         pagamentoCartaoCredito.processarPagamento(800);
         pedido1.confirmarPedido();
+        
 
+        Pedido pedido2 = new Pedido(LocalDate.of(2025, 11, 30), clientePF);
+        
+        pedido2.adicionarItem(geleiaReal, 1);
+        pedido2.calcularTotal();
         pedido2.setPagamento(pagamentoCartaoCredito);
         pagamentoCartaoCredito.processarPagamento(5000);
         pedido2.confirmarPedido();
@@ -61,18 +61,20 @@ public class Sistema_Pedidos {
 
 
         Pedido pedido3 = new Pedido(LocalDate.of(2025, 12, 25), clientePJ);
+        
         pedido3.adicionarItem(console,10);
-
-        Pedido pedido4 = new Pedido(LocalDate.of(2025, 11, 26), clientePJ);
-        pedido4.adicionarItem(pcgamer,25);
-
-
+        pedido3.calcularTotal();
         pedido3.setPagamento(pagamentoBoleto);
-        pagamentoBoleto.processarPagamento(35700);
+        pagamentoBoleto.processarPagamento(35699.90);
         pedido3.confirmarPedido();
 
+
+        Pedido pedido4 = new Pedido(LocalDate.of(2025, 11, 26), clientePJ);
+        
+        pedido4.adicionarItem(pcgamer,20);
+        pedido4.calcularTotal();
         pedido4.setPagamento(pagamentoBoleto);
-        pagamentoBoleto.processarPagamento(12500);
+        pagamentoBoleto.processarPagamento(99999.8);
         pedido4.confirmarPedido();
 
 
@@ -88,7 +90,7 @@ public class Sistema_Pedidos {
         System.out.println("---------- Dados do Pedido 1 ----------");
         pedido1.exibirDetalhes();
 
-        System.out.printf("Preço total: %.2f\n", pedido1.calcularTotal());
+        System.out.printf("Preço total: R$ %.2f\n", pedido1.calcularTotal());
 
 
         System.out.println("---------- Produtos ----------");
@@ -98,7 +100,7 @@ public class Sistema_Pedidos {
         System.out.println("---------- Dados do Pedido 2 ----------");
         pedido2.exibirDetalhes();
 
-        System.out.printf("Preço total: %.2f\n", pedido2.calcularTotal());
+        System.out.printf("Preço total: R$ %.2f\n", pedido2.calcularTotal());
 
 
 
@@ -116,8 +118,8 @@ public class Sistema_Pedidos {
         System.out.println("---------- Dados do Pedido 3 ----------");
         pedido3.exibirDetalhes();
 
-        System.out.printf("Preço total: %.2f\n", pedido3.calcularTotal());
-        System.out.printf("Preço com desconto: %.2f\n", pedido3.aplicarDesconto(0.20));
+        System.out.printf("Preço total: R$ %.2f\n", pedido3.calcularTotal());
+        System.out.printf("Preço com desconto: R$ %.2f\n", pedido3.aplicarDesconto(10000));
 
 
         System.out.println("---------- Produtos ----------");
@@ -127,7 +129,7 @@ public class Sistema_Pedidos {
         System.out.println("---------- Dados do Pedido 4 ----------");
         pedido4.exibirDetalhes();
 
-        System.out.printf("Preço total: %.2f\n", pedido4.calcularTotal());
+        System.out.printf("Preço total: R$ %.2f\n", pedido4.calcularTotal());
 
 
         System.out.println("---------- Cliente ----------");

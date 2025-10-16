@@ -8,6 +8,7 @@ public class ItemPedido {
     public ItemPedido(Produto produto, int quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
+        this.precoUnitario = produto.getPreco();
     }
 
     public int getQuantidade() {
@@ -24,6 +25,14 @@ public class ItemPedido {
 
     public void setProduto(Produto produto) {
         this.produto = produto;
+    }
+
+    public double getPrecoUnitario() {
+        return this.precoUnitario;
+    }
+
+    public void setPrecoUnitario(double precoUnitario) {
+        this.precoUnitario = precoUnitario;
     }
 
     public double getSubTotal() {
